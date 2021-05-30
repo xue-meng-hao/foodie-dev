@@ -1,5 +1,6 @@
 package com.imooc.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
+    @Value("${imagelocation}")
+    private String imagesLocation;
+
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder.build();
@@ -25,6 +29,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         //addResourceLocations映射本地静态资源
         registry.addResourceHandler("/**").
                 addResourceLocations("classpath:/META-INF/resources/").
-                addResourceLocations("file:/D:/workspaces/images/");
+                addResourceLocations("file:" + imagesLocation);
     }
 }

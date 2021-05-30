@@ -1,0 +1,29 @@
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+############################################################
+#
+# 配置数据源信息
+#
+############################################################
+spring:
+  datasource: # 数据源的相关配置
+    #url: jdbc:mysql://localhost:3306/foodie-shop-dev?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: xmh123
+  redis:
+    database: 1
+    host: 192.168.17.135
+    port: 6379
+    password: imooc
+
+############################################################
+#
+# mybatis 配置
+#
+############################################################
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+imagelocation: D:/workspaces/images/

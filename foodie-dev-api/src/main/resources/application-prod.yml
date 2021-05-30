@@ -1,0 +1,15 @@
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+############################################################
+#
+# 配置数据源信息
+#
+############################################################
+spring:
+  datasource: # 数据源的相关配置
+    url: jdbc:mysql://tomcats.com:3306/foodie-shop-dev?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+imagelocation: /workspaces/images/

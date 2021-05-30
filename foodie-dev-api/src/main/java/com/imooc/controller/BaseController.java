@@ -22,7 +22,7 @@ public class BaseController {
     //    微信支付成功->通知到支付中心-->天天吃货平台
     //                      |-->回调通知的URL
 //    String payRetrurnUrl = "http://localhost:8088/orders/notifyMerchantOrderPaid";
-    String payRetrurnUrl = "http://pccdwu.natappfree.cc/orders/notifyMerchantOrderPaid";
+    String payRetrurnUrl = "http://192.168.17.128:8088/orders/notifyMerchantOrderPaid";
 
     String paymentURL = "http://payment.t.mukewang.com/foodie-payment/payment/createMerchantOrder";
     //用户上传头像的目录

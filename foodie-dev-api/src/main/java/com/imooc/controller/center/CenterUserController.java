@@ -89,14 +89,14 @@ public class CenterUserController extends BaseController {
         //上传的头像最终保存的位置
         String finalFacePath = fileSpace + uploadPathPrefix + File.separator + newFileName;
         File outFile = new File(finalFacePath);
-        if (outFile.getParentFile() != null) {
-            outFile.getParentFile().mkdirs();
-        }
+//        if (!outFile.getParentFile().exists()) {
+//            outFile.getParentFile().mkdirs();
+//        }
 
         //文件输出保存到目录
         try (
                 FileOutputStream fos = new FileOutputStream(outFile);
-                InputStream fis = file.getInputStream();
+                InputStream fis = file.getInputStream()
         ) {
             IOUtils.copy(fis, fos);
             fos.flush();
@@ -131,10 +131,10 @@ public class CenterUserController extends BaseController {
     }
 
     /**
-     * 将重要信息隐藏
+     * 隐藏重要信息
      *
-     * @param result
-     * @return
+     * @param result 未隐藏信息的Users对象
+     * @return 隐藏信息后的结果
      */
     public Users setPropertiesNull(Users result) {
         result.setPassword(null);

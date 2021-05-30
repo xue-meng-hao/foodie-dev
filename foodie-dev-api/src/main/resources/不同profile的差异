@@ -1,0 +1,8 @@
+多环境配置梳理：
+1. 数据源配置
+    1.1 url 修改localhost或内网IP（集群或者分布式一定要使用内网ip）
+    1.2 数据库密码
+2. mybatis 日志打印
+    dev  可以打印
+    prod 无需打印
+3.修改file-upload-dev.properties或file-upload-prod.properties中文件上传修改

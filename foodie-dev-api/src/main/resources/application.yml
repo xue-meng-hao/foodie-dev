@@ -1,5 +1,5 @@
 server:
-  port: 8088
+  #  port: 8088
   tomcat:
     uri-encoding: UTF-8
 ############################################################
@@ -8,6 +8,8 @@ server:
 #
 ############################################################
 spring:
+  profiles:
+    active: dev
   servlet:
     multipart:
       max-file-size: 512000 #500kb文件大小限制
@@ -51,3 +53,4 @@ mapper:
 pagehelper:
   support-methods-arguments: true
   helper-dialect: MYSQL
+imagelocation: D:/workspaces/images/
